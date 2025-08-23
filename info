@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include <string.h>
+int main()
+{
+    char name[50] = "Arpita";
+    int age = 18;
+    char course[50] = "Btech";
+    scanf("%s %d %s", name, &age, course);
+    printf("\nthe name of the student is : %s", name);
+    printf("\nthe age of the student is: %d", age);
+    printf("\nthe basic info of the student is: %s", course);
+    return 0;
+}
