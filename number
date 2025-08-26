@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int number, i, count = 0;
+    int original, reversed = 0, remainder;
+
+    // Input
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    // Check Even or Odd
+    if (number % 2 == 0)
+        printf("%d is Even\n", number);
+    else
+        printf("%d is Odd\n", number);
+
+    // Check Prime
+    if (number <= 1) {
+        printf("%d is Not Prime\n", number);
+    } else {
+        for (i = 2; i <= number / 2; i++) {
+            if (number % i == 0) {
+                count++;
+                break;
+            }
+        }
+        if (count == 0)
+            printf("%d is Prime\n", number);
+        else
+            printf("%d is Not Prime\n", number);
+    }
+
+    // Check Palindrome
+    original = number;
+    while (number > 0) {
+        remainder = number % 10;
+        reversed = reversed * 10 + remainder;
+        number /= 10;
+    }
+
+    if (original == reversed)
+        printf("%d is a Palindrome\n", original);
+    else
+        printf("%d is Not a Palindrome\n", original);
+
+    return 0;
+}
